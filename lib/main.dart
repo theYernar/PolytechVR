@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:polytechvr/screens/onboarding/onboarding_screen.dart';
+import 'package:polytechvr/screens/onboarding/first_onboarding_screen.dart';
 
 void main() {
   runApp(const PolytechAR());
@@ -12,7 +12,7 @@ class PolytechAR extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      home: FirstOnboardingScreen(),
     );
   }
 }

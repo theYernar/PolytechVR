@@ -57,7 +57,7 @@ class _HeaderWidget extends StatelessWidget {
         _buttonBuilder(
           title: 'IT center', 
           image: 'assets/images/itcenter.png',
-          onTap: () => print("other")
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(builder:(context) => VRView(link: Links.itCenterHall, title: 'IT center'),))
         ),
       ],
     );

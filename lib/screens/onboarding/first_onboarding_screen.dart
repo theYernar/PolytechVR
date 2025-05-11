@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:polytechvr/screens/home/home_screen.dart';
 // import 'package:polytechvr/theme/colors/app_colors.dart';
 
 class FirstOnboardingScreen extends StatelessWidget {
-  final PageController pageController;
-  const FirstOnboardingScreen({super.key, required this.pageController});
+  // final PageController pageController;
+  const FirstOnboardingScreen({super.key, });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color(0xfffff1f1),
-      body: _HeaderWidget(pageController: pageController),
+      body: _HeaderWidget(),
     );
   }
 }
 
 class _HeaderWidget extends StatelessWidget {
-  final PageController pageController;
+  // final PageController pageController;
   const _HeaderWidget({
-    super.key, required this.pageController,
+    super.key,
   });
 
   @override
@@ -71,7 +72,7 @@ class _HeaderWidget extends StatelessWidget {
 
           
                 const Spacer(),
-                StartButton(pageController: pageController),
+                StartButton(),
               ],
             ),
           ),
@@ -82,18 +83,18 @@ class _HeaderWidget extends StatelessWidget {
 }
 
 class StartButton extends StatelessWidget {
-  final PageController pageController;
+  // final PageController pageController;
   const StartButton({
-    super.key, required this.pageController,
+    super.key,
   });
   
-  void nextNavigate() {
-    pageController.animateToPage(
-      1, 
-      duration: const Duration(milliseconds: 500), 
-      curve: Curves.easeInOut,
-    );
-  } 
+  // void nextNavigate() {
+  //   pageController.animateToPage(
+  //     1, 
+  //     duration: const Duration(milliseconds: 500), 
+  //     curve: Curves.easeInOut,
+  //   );
+  // } 
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +118,7 @@ class StartButton extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 child: Text(
-                  'Далее',
+                  'Начать',
                   style: GoogleFonts.nunito(
                     color: Colors.white,
                     fontSize: 24,
@@ -129,7 +130,9 @@ class StartButton extends StatelessWidget {
             Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: nextNavigate,
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder:(context) => HomeScreen(),));
+                },
                 borderRadius: BorderRadius.circular(14),
               ),
             )
